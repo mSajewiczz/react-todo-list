@@ -1,1 +1,0 @@
-### My first React.js app - To Do List 
