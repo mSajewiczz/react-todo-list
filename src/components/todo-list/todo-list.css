@@ -1,8 +1,17 @@
+body {
+    display: grid;
+    place-content: center ;
+    width: 100%;
+}
+
 .main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #3b3b3b;
+    width: 100%;
+    border-radius: 15px;
 }
 
 .welcome-header {
@@ -29,7 +38,7 @@ input {
 input, .add-btn {
     margin: 10px 0;
     height: 40px;
-    border-radius: 25px;
+    border-radius: 15px;
     border: none;
     font-size: 20px;
 }
@@ -57,6 +66,7 @@ li {
     margin: 10px;
     width: 90%;
     border: 1px solid grey;
+    border-radius: 15px;
 }
 
 .task-text {
