@@ -2,6 +2,10 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
+
+
+
+  
   const initialList = [
     // "Zrobić zakupy",
     // "Zrobić pranie",
