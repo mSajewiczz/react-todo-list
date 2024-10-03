@@ -4,3 +4,61 @@
     justify-content: center;
     align-items: center;
 }
+
+.welcome-header {
+    margin: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-box, input, .add-btn {
+    width: 90%;
+}
+
+input {
+    padding: 20px;
+}
+
+input, .add-btn {
+    margin: 10px 0;
+    height: 40px;
+    border-radius: 25px;
+    border: none;
+    font-size: 20px;
+}
+
+button {
+    text-align: center;
+    cursor: pointer;
+}
+
+ol {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    color: #fff;
+    margin: 10px;
+    width: 90%;
+    border: 1px solid grey;
+}
+
+.task-text {
+    margin: 10px;
+}

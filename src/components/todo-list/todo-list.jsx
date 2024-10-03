@@ -27,25 +27,30 @@ function ToDoList() {
     return (
         <>
        <div className='main'>
-       <div>
+       <div className='welcome-header'>
+       <h1>To Do List</h1>
+       <p>Poniżej możesz dodać lub wyszukać swoje zadania</p>
+       </div>
+       <div className='input-box'>
         <input placeholder='Wyszukaj zadanie...' onChange={(event) => setSearch(event.target.value)}/>
         <ol>
         { tasks
       .filter((item) => item.toLowerCase().includes(search.toLowerCase()))
       .map((task, index) => (
         <li key={index}>
-                    <p>{task}</p>
+                    <p className='task-text'>{task}</p>
                     <button className='delete' onClick = {() => deleteTask(index)}>Usun</button>
                 </li>
     ))}
         </ol>
         </div>
 
-        <div>
+        <div className='input-box'>
             <input type="text" placeholder='Wpisz zadanie...' value = {newTask} onChange={hanldeInputChange}/>
             <button
 
             onClick={addTask}
+            className='add-btn'
             
             >Dodaj</button>
 
