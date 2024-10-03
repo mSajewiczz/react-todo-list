@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './todo-list.css';
 
 
 function ToDoList() {
@@ -25,6 +26,8 @@ function ToDoList() {
 
     return (
         <>
+       <div className='main'>
+       <div>
         <input placeholder='Wyszukaj zadanie...' onChange={(event) => setSearch(event.target.value)}/>
         <ol>
         { tasks
@@ -36,7 +39,7 @@ function ToDoList() {
                 </li>
     ))}
         </ol>
-
+        </div>
 
         <div>
             <input type="text" placeholder='Wpisz zadanie...' value = {newTask} onChange={hanldeInputChange}/>
@@ -55,6 +58,7 @@ function ToDoList() {
                 )}
             </ol> */}
         </div>
+       </div>
         </>    
     )
 }
