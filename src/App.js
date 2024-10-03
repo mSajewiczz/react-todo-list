@@ -3,20 +3,22 @@ import { useState } from 'react';
 
 function App() {
   const initialList = [
-    "Zrobić zakupy",
-    "Zrobić pranie",
-    "Posprzątać w domu",
-    "Zrobić obiad",
+    // "Zrobić zakupy",
+    // "Zrobić pranie",
+    // "Posprzątać w domu",
+    // "Zrobić obiad",
   ]
 
   const [todo, setTodo] = useState(initialList);
   const [newTodo, setNewTodo] = useState("");
   const [search, setSearch] = useState(""); 
 
-  function addTask () {
-    setTodo(t => [...t, newTodo]);
-    setNewTodo("");
-  }
+  function addTask(){
+    if(newTodo.trim() !== ""){
+        setTodo(t => [...t, newTodo]);
+        setNewTodo("");
+    }
+}
 
   function deleteTask () {
 
@@ -34,14 +36,15 @@ function App() {
       { todo
       .filter((item) => item.toLowerCase().includes(search.toLowerCase()))
       .map((item, index) => (
-        <li key={index}>{item} ({index})</li>
+        <li key={index}> {item}</li>
       ))}
 
       <form>
-        <input value={""} onChange={e => setText(e.target.value)}/>
+        <input/>
         <button
           onClick={
-            (event) => {event.preventDefault(); setNewTodo(event.target.previousElementSibling.value); addTask()}
+            (event) => {addTask(); event.preventDefault(); setNewTodo(event.target.value)}
+            
             // (event) => {
             //   addTask();
             //   event.preventDefault();
