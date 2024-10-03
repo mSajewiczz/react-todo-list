@@ -10,7 +10,18 @@ function App() {
   ]
 
   const [todo, setTodo] = useState(initialList);
+  const [newTodo, setNewTodo] = useState("");
   const [search, setSearch] = useState(""); 
+
+  function addTask () {
+    setTodo(t => [...t, newTodo]);
+    setNewTodo("");
+  }
+
+  function deleteTask () {
+
+  }
+
 
 
   return (
@@ -27,13 +38,16 @@ function App() {
       ))}
 
       <form>
-        <input />
+        <input value={""} onChange={e => setText(e.target.value)}/>
         <button
           onClick={
-            (event) => {
-              event.preventDefault();
-              console.log(event.target.previousElementSibling.value);
-            }
+            (event) => {event.preventDefault(); setNewTodo(event.target.previousElementSibling.value); addTask()}
+            // (event) => {
+            //   addTask();
+            //   event.preventDefault();
+            //   (event) => setNewTodo(event.target.value);
+            //   // console.log(event.target.previousElementSibling.value);
+            // }
           }
         >
           Dodaj
