@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import './todo-list.css';
+import '../ToDoList/ToDoList.css';
+import Search from '../Search/Search';
 
 
-function ToDoList() {
+export default function ToDoList() {
 
     const [tasks, setTasks] = useState([]);
     const [newTask, setNewTask] = useState("");
@@ -32,17 +33,7 @@ function ToDoList() {
        <p>Poniżej możesz dodać lub wyszukać swoje zadania</p>
        </div>
        <div className='input-box'>
-        <input placeholder='Wyszukaj zadanie...' onChange={(event) => setSearch(event.target.value)}/>
-        <ol>
-        { tasks
-      .filter((item) => item.toLowerCase().includes(search.toLowerCase()))
-      .map((task, index) => (
-        <li key={index}>
-                    <p className='task-text'>{task}</p>
-                    <button className='delete' onClick = {() => deleteTask(index)}>Usun</button>
-                </li>
-    ))}
-        </ol>
+            <Search setSearch = {setSearch} deleteTask = {deleteTask} tasks = {tasks} search = {search}/>
         </div>
 
         <div className='input-box'>
@@ -59,4 +50,4 @@ function ToDoList() {
     )
 }
 
-export default ToDoList;
+// export default ToDoList;
