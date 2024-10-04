@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import '../ToDoList/ToDoList.css';
 import Search from '../Search/Search';
+import AddTask from '../AddTask/AddTask';
 
 
 export default function ToDoList() {
@@ -37,13 +38,7 @@ export default function ToDoList() {
         </div>
 
         <div className='input-box'>
-            <input type="text" placeholder='Wpisz zadanie...' value = {newTask} onChange={hanldeInputChange}/>
-            <button
-
-            onClick={addTask}
-            className='add-btn'
-            
-            >Dodaj</button>
+        <AddTask setNewTask = {setNewTask} newTask = {newTask} addTask = {addTask} hanldeInputChange={hanldeInputChange}/>
         </div>
        </div>
         </>    
